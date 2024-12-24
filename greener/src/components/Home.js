@@ -1,5 +1,35 @@
- import BestSellingCard from "./BestSellingCard"
+ import interior1 from '../img/interior-home-plant-in-pot-png.webp'
+ import interior2 from '../img/pngtree-indoor-plant-png-image_6129530.png'
+ import interior3 from '../img/monstera-plant-in-ceramic-pot-illustration-ai-generative-png.webp'
+ import BestSellingCard from "../components/BestSellingCard"
+ import bradley from '../img/bradley.jpg'
+ import savannah from '../img/SAVANNAH.jpg'
+ import sarah from '../img/sarah.jpg'
+ import pot from '../img/sand pots.jpg'
+ import bgimage from '../img/monstera-plant-in-ceramic-pot-illustration-ai-generative-png.webp'
+
 function Home (){
+    const BSCards = [
+        {
+        name: "plant 1",
+        img:interior1,
+        desc:"lorem ipsum dolor sit amet",
+        price: "$17,00",
+        },
+
+        {
+            name: "plant 2",
+            img:interior2,
+            desc:"lorem ipsum dolor sit amet",
+            price: "$17,00",
+            },
+            {
+                name: "plant 3",
+                img:interior3,
+                desc:"lorem ipsum dolor sit amet",
+                price: "$17,00",
+                },
+    ]
     return(
         <>
           <div class="container">
@@ -47,13 +77,18 @@ function Home (){
                 <h2>BEST SELLING<br/>Plant Collection</h2>
                 <p>Check out our collection, we got every plant you need here!<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Let's grow it together </p>
                 <div class="container">
-                   <BestSellingCard/>
+                   {
+                    BSCards.map((card)=>{
+
+                        return <BestSellingCard cards={card}/>
+                    })
+                   }
                 </div>
             </div>
         </section>
         <section class="imgPara">
             <div class="img">
-                <img src="../Website 3/img/pngtree-indoor-plant-png-image_6129530.png" alt="tree"/>
+                <img src={bgimage} alt="tree"/>
             </div>
             <div class="info">
                 <div class="about">
@@ -77,7 +112,7 @@ function Home (){
         <section class="fourthSec">
             <div class="proverb">
                 <h2>start gardening<br/>and grow your<br/>own plant!</h2>
-                <img src="../Website 3/img/sand pots.jpg" alt=""/>
+                <img src={pot} alt=""/>
                 <div class="paraButton">
                     <p>Lorem ispum dolor sit amet,<br/>consectetur adipiscing elit</p>
                     <a href=""> Read More
@@ -100,7 +135,7 @@ function Home (){
                 </div>
             </div>
             <div class="img">
-                <img src="../Website 3/img/pngtree-indoor-plant-png-image_6129530.png" alt=""/>
+                <img src={bgimage} alt=""/>
             </div>
         </section>
         <section class="greenSec2">
@@ -110,7 +145,7 @@ function Home (){
                 <div class="container">
                     <div class="plantCard">
                         <div class="thumbnail">
-                            <img src="../Website 3/img/bradley.jpg" alt=""/>
+                            <img src={bradley} alt=""/>
                             <h3>Bradley
                             </h3>
                             <div class="bttm"></div>
@@ -121,7 +156,7 @@ function Home (){
                     </div>
                     <div class="plantCard">
                         <div class="thumbnail">
-                            <img src="../Website 3/img/SAVANNAH.jpg" alt=""/>
+                            <img src={savannah} alt=""/>
                             <h3>Savannah    
                             </h3> 
                             <div class="bttm"></div>
@@ -132,7 +167,7 @@ function Home (){
                     </div>
                     <div class="plantCard">
                         <div class="thumbnail">
-                            <img src="../Website 3/img/sarah.jpg" alt=""/>
+                            <img src={sarah} alt=""/>
                             <h3>Sarah
                             </h3>
                             <div class="bttm"></div>
